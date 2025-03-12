@@ -1,0 +1,6 @@
+from cryptography.fernet import Fernet
+text = b'gAAAAABnqrK_Q5iYgmhsW1ppUZN1Rp_9_S6NxoaKO0wKdlbB3Kf6hZWPXJQc2oLkb6BtTeXqsQwcHlPGJLQK-bEriogaCtL5bxAL6z49LQK2N0wL8cXGjywyBxoWQ4FYSDIvBHp      p9C7unzLaOcbmfomES5vICebE2HVYic2Bh643PSLcF7Bc5QXLejTTrkeJ_TahfZEwtjR9cqMeT8aGyeL0BAaxsaUOkfLgxKB_0McTMfqqditcZEP2Ijph0xnG0hgUASkmQy7biPSEsGeddOiggLjTcSSBKw-wXOowBF9kABhOj_aP-bfu9OFZaMYWSnizWGfqunPXrTCBzJe4Fxqzkcda1B7WOakZ_Sml7vemnbSt97XkgQrEHmEmsv4jP5cTvruhGnqqLOv-ID6Tl95yMg8XTqNT7SIrNhen4f-Vup_aiEOsSEDyDs7pIDKwm7lGMwmUZMT2_y5pS2ddanPNfvuRzvvC-zYPgA53L_-xr6omowivcZMQdL-wpF6wudHrAPc1SKF2e-5oSEdlLzzMXqEopWJAcmQ==' # ตามรหัสด้านบน
+key = b'ky5R8xKzb-wTHRn9DvEvvwr-s2nZI7V34eZh91Pf-uA=' # ตามรหัสด้านบน
+f = Fernet(key)
+message = f.decrypt(text).decode('utf-8')
+print(message)

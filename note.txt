@@ -1,0 +1,4 @@
+Create a virtual environment:  python -m venv myenv
+Activate the virtual environment: myenv\Scripts\activate
+
+Deactivate the environment: To exit the virtual environment, simply run: deactivate
