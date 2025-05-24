@@ -53,10 +53,12 @@ if __name__ == "__main__":
     if btc_usd is not None and usd_thb_rate is not None:
         # Calculate Bitcoin price in THB
         btc_thb = btc_usd * usd_thb_rate
-        # Print the results formatted to two decimal places
-        print(f"Bitcoin Price: ${btc_usd:,.2f} USD")
-        print(f"USD to THB Exchange Rate: {usd_thb_rate:,.2f} THB")
-        print(f"Bitcoin Price: {btc_thb:,.2f} THB")
+        
+        # New output format
+        print("1 Bitcoin = 100,000,000 Satoshis")
+        print(f"Price of 100,000,000 Satoshis (1 BTC): ${btc_usd:,.2f} USD")
+        print(f"Current USD to THB Exchange Rate: {usd_thb_rate:,.2f} THB")
+        print(f"Price of 100,000,000 Satoshis (1 BTC): {btc_thb:,.2f} THB")
     else:
         # Print specific error messages if API calls failed
         if btc_usd is None:
