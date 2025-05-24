@@ -59,6 +59,22 @@ if __name__ == "__main__":
         print(f"Price of 100,000,000 Satoshis (1 BTC): ${btc_usd:,.2f} USD")
         print(f"Current USD to THB Exchange Rate: {usd_thb_rate:,.2f} THB")
         print(f"Price of 100,000,000 Satoshis (1 BTC): {btc_thb:,.2f} THB")
+        
+        # Calculate Satoshis per USD and THB
+        # Ensure btc_usd and btc_thb are not zero to avoid DivisionByZeroError
+        if btc_usd > 0:
+            sats_per_usd = 100000000 / btc_usd
+        else:
+            sats_per_usd = 0 # Or handle as an error/undefined case
+        
+        if btc_thb > 0:
+            sats_per_thb = 100000000 / btc_thb
+        else:
+            sats_per_thb = 0 # Or handle as an error/undefined case
+
+        print() # Blank line for readability
+        print(f"For 1 USD, you can get {sats_per_usd:,.0f} Satoshis.")
+        print(f"For 1 THB, you can get {sats_per_thb:,.0f} Satoshis.")
     else:
         # Print specific error messages if API calls failed
         if btc_usd is None:
